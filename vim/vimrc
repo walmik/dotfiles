@@ -333,3 +333,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Move to begining or end of line in Insert mode
+inoremap II <Esc>I
+inoremap AA <Esc>A
+
+" Undo in insert mode
+inoremap UU <Esc>u
+
+" Delete line in Insert mode while staying in it
+inoremap DD <Esc>ddi
