@@ -315,15 +315,14 @@ nnoremap <silent><c-Up> :lprevious<cr>
 nnoremap <silent> <Tab> :NERDTreeToggle<cr>
 noremap <silent> <Tab> :NERDTreeToggle<cr>
 
-"set listchars=tab:▸\ ,trail:·      " show · for trailing space, \ \ for trailing tab
-"set listchars=tab:\ \ ,trail:·    " show · for trailing space, \ \ for trailing tab
-"set listchars=tab:▸\ ,eol:¬
-"set listchars+=extends:>
-"set listchars+=precedes:<
-"set list                            " show hidden characters
-
-let g:airline_section_c = '%F'
-" let g:airline#extensions#tabline#enabled = 1
+" Invisible characters
+set listchars=tab:▸\ ,trail:·      " show · for trailing space, \ \ for trailing tab
+set listchars=tab:\ \ ,trail:·    " show · for trailing space, \ \ for trailing tab
+set listchars=tab:▸\ ,eol:¬
+set listchars+=extends:>
+set listchars+=precedes:<
+" toggle invisible characters
+nmap <silent><leader>l :set list!<CR>
 
 set clipboard=unnamed
 
