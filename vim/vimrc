@@ -12,7 +12,8 @@ set t_Co=256
 
 " syntax highlighting
 syntax on
-color xoria256
+set background=dark
+colorscheme hybrid
 
 set autochdir
 
@@ -78,13 +79,13 @@ set formatoptions=qrn1
 
 " FOLDING
 "set nofoldenable                " disable folding
-" set foldenable                  " enable folding
-" set foldmethod=syntax           " most files are evenly indented
-" set foldlevel=99
+set foldenable                  " enable folding
+set foldmethod=syntax           " most files are evenly indented
+set foldlevel=99
 "press Space to toggle the current fold open/closed. However, if the cursor is not in a fold, move to the right (the default behavior)
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 vnoremap <Space> zf
-"let javaScript_fold=1
+let javaScript_fold=1
 
 
 "navigation
@@ -341,3 +342,7 @@ inoremap UU <Esc>u
 
 " Delete line in Insert mode while staying in it
 inoremap DD <Esc>ddi
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
