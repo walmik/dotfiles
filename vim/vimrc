@@ -15,7 +15,7 @@ syntax on
 set background=dark
 colorscheme hybrid
 
-set autochdir
+" set autochdir
 
 set scrolloff=3                     " show 3 lines of context around the cursor
 set autoread                        " set to auto read when a file is changed from the outside
@@ -35,7 +35,6 @@ set hlsearch                        " highlight search things
 set incsearch                       " go to search results as typing
 set smartcase                       " but case-sensitive if expression contains a capital letter.
 set ignorecase                      " ignore case when searching
-set gdefault                        " assume global when searching or substituting
 set magic                           " set magic on, for regular expressions
 set showmatch                       " show matching brackets when text indicator is over them
 
