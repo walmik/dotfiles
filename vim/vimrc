@@ -1,5 +1,4 @@
 set nocompatible                    " full vim
-syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
 
 call pathogen#infect()              " load pathogen
@@ -11,10 +10,13 @@ let mapleader = ","
 set t_Co=256
 
 " syntax highlighting
-syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
+" theme
 set background=dark
 colorscheme hybrid_reverse
-let g:airline_theme = "hybrid"
 
 " set autochdir
 
@@ -87,9 +89,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 vnoremap <Space> zf
 let javaScript_fold=1
 
-
-"navigation
-"between tabs
+"navigation between tabs
 nnoremap <leader>l gt
 nnoremap <leader>j gt
 nnoremap <leader>k gT
@@ -170,12 +170,7 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " all my .dust files ARE html
-au BufNewFile,BufRead *.dust     :set ft=html
-
-" .mu .hogan .hjs files are .mustache files
-au BufNewFile,BufRead *.hjs     :set ft=mustache
-au BufNewFile,BufRead *.mu      :set ft=mustache
-au BufNewFile,BufRead *.hogan   :set ft=mustache
+au BufNewFile,BufRead *.dust set ft=html
 
 " JavaScript
 au BufRead,BufNewFile *.json set ft=javascript
@@ -278,7 +273,7 @@ endif
 set guitablabel=%N/\ %t\ %M
 
 " move tabs to the end for new, single buffers (exclude splits)
-autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
+" autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
 
 let g:CommandTAcceptSelectionMap = '<,-q>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
@@ -288,22 +283,16 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-" [04/21/2015] added for syntastic
+" syntastic
+let g:statline_syntastic = 0
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+='%F'
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-"nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-"inoremap <silent> <F9> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-inoremap <silent><F9> :SyntasticCheck<CR> :lclose<CR>
-nnoremap <silent><F9> :SyntasticCheck<CR> :lclose<CR>
 
 inoremap <silent><c-Down> :lnext<cr>
 inoremap <silent><c-Up> :lprevious<cr>
