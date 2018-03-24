@@ -13,7 +13,7 @@ set t_Co=256
 " syntax highlighting
 syntax on
 set background=dark
-colorscheme hybrid
+colorscheme solarized
 
 " set autochdir
 
@@ -178,9 +178,6 @@ au BufNewFile,BufRead *.hogan   :set ft=mustache
 
 " JavaScript
 au BufRead,BufNewFile *.json set ft=javascript
-
-" au BufRead,BufNewFile *.php set indentexpr= | set smartindent
-au BufRead,BufNewFile *.phps set filetype=php
 
 " **whitespace highlighting and stripping
 "highlight trailing white spaces
