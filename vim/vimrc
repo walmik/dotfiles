@@ -13,7 +13,8 @@ set t_Co=256
 " syntax highlighting
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme hybrid_reverse
+let g:airline_theme = "hybrid"
 
 " set autochdir
 
