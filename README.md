@@ -1,7 +1,7 @@
-# yadr
+# dotfiles
 Yet another dotfiles repo
 
 
 Clone and create symbolic links:
-- ~/.vim -> /path/to/yadr/vim
-- ~/.vimrc -> /path/to/yadr/vim/vimrc
+- ~/.vim -> /path/to/dotfiles/vim
+- ~/.vimrc -> /path/to/dotfiles/vim/vimrc
