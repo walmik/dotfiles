@@ -15,8 +15,8 @@ if !exists("g:syntax_on")
 endif
 
 " theme
-set background=dark
-colorscheme hybrid_reverse
+syntax on
+colorscheme sublimemonokai
 
 " set autochdir
 
